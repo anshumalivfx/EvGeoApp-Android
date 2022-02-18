@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignInPage">
+
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
@@ -12,16 +14,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintCircleRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/background" />
 
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/countryCode_picker"
+        android:layout_width="143dp"
+        android:layout_height="51dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/phoneNumber"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
+
     <EditText
         android:id="@+id/phoneNumber"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="234dp"
+        android:layout_height="52dp"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="Enter your Phone Number"
@@ -30,25 +44,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintCircleRadius="10dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <Button
         android:id="@+id/signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="SignIn"
         android:background="@drawable/circle_button"
         android:backgroundTint="#e6655c"
         android:backgroundTintMode="multiply"
+        android:text="Send OTP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otpBlock"
+        app:layout_constraintVertical_bias="0.217" />
+
+    <EditText
+        android:id="@+id/otpBlock"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="Enter OTP"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneNumber"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.123" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
