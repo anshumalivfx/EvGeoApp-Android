@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "437895035278",
+    "project_id": "evgeo-a6e7e",
+    "storage_bucket": "evgeo-a6e7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437895035278:android:1bf09b719090dd2c924cdf",
+        "android_client_info": {
+          "package_name": "com.anshumali.evgeo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437895035278-us075o9ucbit3rqppgvf10g1gkhnp03h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvw-5e9smMrRLyDe7MMJtw0dxZoBVWIFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437895035278-us075o9ucbit3rqppgvf10g1gkhnp03h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
