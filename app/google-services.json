@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "437895035278",
-    "project_id": "evgeo-a6e7e",
-    "storage_bucket": "evgeo-a6e7e.appspot.com"
+    "project_number": "942009607051",
+    "project_id": "evgeo-7e148",
+    "storage_bucket": "evgeo-7e148.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:437895035278:android:1bf09b719090dd2c924cdf",
+        "mobilesdk_app_id": "1:942009607051:android:9f39eec68b89614a06058e",
         "android_client_info": {
           "package_name": "com.anshumali.evgeo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "437895035278-us075o9ucbit3rqppgvf10g1gkhnp03h.apps.googleusercontent.com",
+          "client_id": "942009607051-6sg9m8maena2kllsrjrpjcdtciu73tvq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anshumali.evgeo",
+            "certificate_hash": "ee0df9bd274b6664894748342cde1b8a05391965"
+          }
+        },
+        {
+          "client_id": "942009607051-r7f1m2smdc1ngbbslv4r22duiihgo8vi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCvw-5e9smMrRLyDe7MMJtw0dxZoBVWIFE"
+          "current_key": "AIzaSyDsS1vF9z0LKfaLAtLUo43nTpWbdA2wldY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "437895035278-us075o9ucbit3rqppgvf10g1gkhnp03h.apps.googleusercontent.com",
+              "client_id": "942009607051-r7f1m2smdc1ngbbslv4r22duiihgo8vi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
