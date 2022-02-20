@@ -7,5 +7,13 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="MAIN ACTIVITY"
+        android:textStyle="bold"
+        android:textSize="100sp"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

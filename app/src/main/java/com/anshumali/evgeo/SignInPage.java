@@ -51,22 +51,23 @@ public class SignInPage extends AppCompatActivity {
                                 @Override
                                 public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                                     progressBar.setVisibility(View.GONE);
-                                    progressBar.setVisibility(View.VISIBLE);
+                                    signinButton.setVisibility(View.VISIBLE);
                                 }
 
                                 @Override
                                 public void onVerificationFailed(@NonNull FirebaseException e) {
                                     progressBar.setVisibility(View.GONE);
-                                    progressBar.setVisibility(View.VISIBLE);
+                                    signinButton.setVisibility(View.VISIBLE);
                                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
                                 public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                     progressBar.setVisibility(View.GONE);
-                                    progressBar.setVisibility(View.VISIBLE);
+                                    signinButton.setVisibility(View.VISIBLE);
                                     Intent intent = new Intent(getApplicationContext(), OTPPage.class);
                                     intent.putExtra("mobile", ccp.getFormattedFullNumber().toString());
+                                    intent.putExtra("resendMobile", ccp.getFullNumberWithPlus().toString());
                                     intent.putExtra("verificationId", s);
 
                                     startActivity(intent);
