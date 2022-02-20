@@ -6,4 +6,6 @@
     <string name="send_otp">Send OTP</string>
     <string name="enter_your_otp">Enter Your OTP</string>
     <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="sign_in">Sign In</string>
 </resources>

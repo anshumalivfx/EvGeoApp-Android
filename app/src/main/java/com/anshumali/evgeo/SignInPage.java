@@ -3,23 +3,17 @@ package com.anshumali.evgeo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.hbb20.CountryCodePicker;
 
@@ -38,16 +32,14 @@ public class SignInPage extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in_page);
         mAuth = FirebaseAuth.getInstance();
         phoneNumber = findViewById(R.id.phoneNumber);
-        signinButton = findViewById(R.id.signin);
-        ccp = findViewById(R.id.countryCode_picker);
+        signinButton = findViewById(R.id.buttonSendOTP);
+        ccp = findViewById(R.id.ccp);
         progressBar = findViewById(R.id.progressBar);
         signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (phoneNumber.getText().toString().matches("[0-9]+")){
-                    phoneNumber.setFocusable(false);
                     ccp.registerCarrierNumberEditText(phoneNumber);
-                    signinButton.setText("SignIn");
                     progressBar.setVisibility(View.VISIBLE);
                     signinButton.setVisibility(View.GONE);
                     PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -73,15 +65,15 @@ public class SignInPage extends AppCompatActivity {
                                 public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                     progressBar.setVisibility(View.GONE);
                                     progressBar.setVisibility(View.VISIBLE);
+                                    Intent intent = new Intent(getApplicationContext(), OTPPage.class);
+                                    intent.putExtra("mobile", ccp.getFormattedFullNumber().toString());
+                                    intent.putExtra("verificationId", s);
+
+                                    startActivity(intent);
                                 }
                             }
                     );
-                    signinButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Toast.makeText(getApplicationContext(), "SignIn" + ccp.getFullNumberWithPlus(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+
                 }
                 else {
                     Toast.makeText(getApplicationContext(), "FUCK YOU BRO", Toast.LENGTH_SHORT).show();
