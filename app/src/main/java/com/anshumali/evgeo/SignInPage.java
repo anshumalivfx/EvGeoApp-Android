@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SignInPage extends AppCompatActivity {
 
-    private EditText phoneNumber, otpBlock;
+    private EditText phoneNumber;
     private Button signinButton;
     private CountryCodePicker ccp;
     private ProgressBar progressBar;
@@ -40,13 +40,11 @@ public class SignInPage extends AppCompatActivity {
         phoneNumber = findViewById(R.id.phoneNumber);
         signinButton = findViewById(R.id.signin);
         ccp = findViewById(R.id.countryCode_picker);
-        otpBlock = findViewById(R.id.otpBlock);
         progressBar = findViewById(R.id.progressBar);
         signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (phoneNumber.getText().toString().matches("[0-9]+")){
-                    otpBlock.setVisibility(View.VISIBLE);
                     phoneNumber.setFocusable(false);
                     ccp.registerCarrierNumberEditText(phoneNumber);
                     signinButton.setText("SignIn");
